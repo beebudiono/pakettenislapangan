@@ -51,8 +51,9 @@
                                                     {{ date('h:i:sa', strtotime($item->time_start)) }} -
                                                     {{ date('h:i:sa ', strtotime($item->time_end)) }}
 
-                                                    <div style="color:red"> Kuota :
-                                                        {{ $item->kuota }} /org</div>
+                                                    <div style="color:red"> Kuota : {{ $item->kuota }} /org</div>
+
+                                                    <span style="font-size: 10px">*Syarat dan Ketentuan Berlaku</span>
 
                                                 </div>
                                                 <div class="sc_price_block_link">

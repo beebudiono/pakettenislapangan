@@ -119,6 +119,22 @@
                                                         </td>
                                                     </tr>
                                                 @endforeach
+                                                <tr class="cart_item">
+                                                    <td class="product-name">
+                                                        Syarat dan Ketentuan
+                                                    </td>
+                                                    <td class="product-total">
+                                                        <ul>
+                                                            <li>Wajib membawa raket tenis pribadi</li>
+                                                            <li>Wajib mengganti bola apabila di hilangkan oleh pelanggan</li>
+                                                            <li>Wajib membawa sepatu pribadi yang memiliki spesifikasi tenis</li>
+                                                            <li>Tidak boleh ganti lapangan selama pemesanan sudah berhasil</li>
+                                                            <li>Disarankan membawa air mineral</li>
+                                                            <li>Disarankan membawa baju ganti</li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+
                                             </tbody>
                                             <tfoot>
                                                 <tr class="order-total">
