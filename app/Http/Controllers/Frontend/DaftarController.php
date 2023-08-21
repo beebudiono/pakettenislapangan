@@ -59,7 +59,9 @@ class DaftarController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $paket = PaketLatihan::with(['detail'])->where('id', $id)->where('status', 'aktif')->first();
+
+        return view('frontend.pages.pendaftaran-detail', compact('paket'));
     }
 
     /**

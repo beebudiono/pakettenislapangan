@@ -28,6 +28,75 @@
                             <div class="woocommerce">
                                 <form name="checkout" id="checkout" method="post" class="checkout woocommerce-checkout"
                                     enctype="multipart/form-data">
+                                    <h3 id="order_review_heading">Biodata Pelanggan</h3>
+
+                                    <table class="shop_table woocommerce-checkout-review-order-table">
+                                        <thead>
+                                            <tr>
+                                                <th class="product-name" colspan="2">Data Pelanggan</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="cart_item">
+                                                <td class="product-name text-center">
+                                                    Nama
+                                                </td>
+                                                <td class="product-name text-center">
+                                                    {{ $user->name }}
+                                                </td>
+                                            </tr>
+                                            <tr class="cart_item">
+                                                <td class="product-name text-center">
+                                                    Email
+                                                </td>
+                                                <td class="product-name text-center">
+                                                    {{ $user->email }}
+                                                </td>
+                                            </tr>
+                                            @foreach ($user->biodata as $item)
+                                                <tr class="cart_item">
+                                                    <td class="product-name text-center">
+                                                        Umur
+                                                    </td>
+                                                    <td class="product-name text-center">
+                                                        {{ ucfirst($item->umur) }} Tahun
+                                                    </td>
+                                                </tr>
+                                                <tr class="cart_item">
+                                                    <td class="product-name text-center">
+                                                        Alamat
+                                                    </td>
+                                                    <td class="product-name text-center">
+                                                        {{ ucfirst($item->alamat) }}
+                                                    </td>
+                                                </tr>
+                                                <tr class="cart_item">
+                                                    <td class="product-name text-center">
+                                                        Jenis Kelamin
+                                                    </td>
+                                                    <td class="product-name text-center">
+                                                        {{ ucfirst($item->jenis_kelamin) }}
+                                                    </td>
+                                                </tr>
+                                                <tr class="cart_item">
+                                                    <td class="product-name text-center">
+                                                        Status
+                                                    </td>
+                                                    <td class="product-name text-center">
+                                                        {{ ucfirst($item->status) }}
+                                                    </td>
+                                                </tr>
+                                                <tr class="cart_item">
+                                                    <td class="product-name text-center">
+                                                        Pengalaman Tennis
+                                                    </td>
+                                                    <td class="product-name text-center">
+                                                        {{ ucfirst($item->pengalaman_tennis) }}
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
 
                                     <h3 id="order_review_heading">Pesanan Anda</h3>
                                     <!-- Review Order -->

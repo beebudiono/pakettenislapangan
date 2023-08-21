@@ -67,6 +67,7 @@ Route::resource('profile', ProfileController::class);
 Route::resource('pelatih', PelatihController::class);
 
 Route::get('/jadwal', DaftarController::class . '@getJadwal')->name('jadwal.index');
+
 Route::get('/tutorial', function () {
     return view('frontend.pages.tutorial');
 })->name('tutorial.index');

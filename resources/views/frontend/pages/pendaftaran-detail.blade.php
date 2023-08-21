@@ -1,6 +1,5 @@
 @extends('frontend.layouts.main')
 
-
 @section('content')
     <!-- Top Panel -->
     <div class="top_panel_title top_panel_style_3 breadcrumbs_present scheme_original">
@@ -11,7 +10,7 @@
                     <span class="breadcrumbs_delimiter"></span>
                     <a class="breadcrumbs_item all" href="shop.html">Shop</a>
                     <span class="breadcrumbs_delimiter"></span>
-                    <span class="breadcrumbs_item current">Checkout</span>
+                    <span class="breadcrumbs_item current">Detail</span>
                 </div>
             </div>
         </div>
@@ -29,19 +28,10 @@
                                 <form name="checkout" id="checkout" method="post" class="checkout woocommerce-checkout"
                                     enctype="multipart/form-data">
 
-                                    <h3 id="order_review_heading">Pesanan Anda</h3>
+                                    <h3 id="order_review_heading">Detail Paket</h3>
                                     <!-- Review Order -->
                                     <div id="order_review" class="woocommerce-checkout-review-order">
-                                        {{-- @foreach ($paket as $item) --}}
-                                        <input type="hidden" name="user_id" id="user_id" value="{{ Auth::user()->id }}">
-                                        <input type="hidden" name="paket_id" id="paket_id" value="{{ $paket->id }}">
                                         <table class="shop_table woocommerce-checkout-review-order-table">
-                                            <thead>
-                                                <tr>
-                                                    <th class="product-name">Product</th>
-                                                    <th class="product-total">Total</th>
-                                                </tr>
-                                            </thead>
                                             <tbody>
                                                 <tr class="cart_item">
                                                     <td class="product-name text-center">
@@ -139,90 +129,21 @@
                                                 </tr>
                                             </tfoot>
                                         </table>
-                                        {{-- @endforeach --}}
+                                        <div class="sc_price_block_link">
+                                            <a href="{{ route("checkout", $paket->id) }}"
+                                                class="sc_button sc_button_square sc_button_style_filled sc_button_size_large">
+                                                <span class="cube flip-to-top">
+                                                    <span class="default-state">
+                                                        <span>Order Sekarang</span>
+                                                    </span>
+                                                    <span class="active-state">
+                                                        <span>Order Sekarang</span>
+                                                    </span>
+                                                </span>
+                                            </a>
+                                        </div>
                                         <div class="alert alert-danger alert-dismissible fade show" role="alert"
                                             style="display: none;" style="color: red">
-                                        </div>
-                                        <div id="payment" class="woocommerce-checkout-payment">
-                                            <ul class="wc_payment_methods payment_methods methods">
-                                                <li>
-                                                    <p class="form-row form-row form-row-wide address-field validate-required"
-                                                        id="billing_city_field">
-                                                        <label for="lap_lat" class="">Masukkan Lapangan Tempat Anda
-                                                            Latihan</label>
-                                                        <input type="text" class="input-text " name="lap_lat"
-                                                            id="lap_lat" placeholder="Nama Lapangan / Alamat Lapangan"
-                                                            value="" />
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="form-row form-row form-row-wide address-field validate-required"
-                                                        id="billing_city_field">
-                                                        <label for="start" class="">Masukkan Tanggal / Waktu
-                                                            Mulai Anda Latihan</label>
-                                                        <input type="datetime-local" class="input-text " name="start"
-                                                            id="start" placeholder="Nama Lapangan / Alamat Lapangan"
-                                                            value="" />
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p class="form-row form-row form-row-wide address-field validate-required"
-                                                        id="billing_city_field">
-                                                        <label for="end" class="">Masukkan Tanggal / Waktu
-                                                            Berakhir Anda Latihan</label>
-                                                        <input type="datetime-local" class="input-text " name="end"
-                                                            id="end" placeholder="Nama Lapangan / Alamat Lapangan"
-                                                            value="" />
-                                                    </p>
-                                                </li>
-                                                <li class="wc_payment_method payment_method_paypal">
-                                                    <input id="metode_pemb" type="radio" class="input-radio"
-                                                        name="metode_pemb" value="bank_bri"
-                                                        data-order_button_text="Proceed to BankBri" />
-                                                    <label for="payment_method_paypal">
-                                                        Bank BRI a/n Volvo Budi 871293717293781293
-                                                    </label>
-                                                </li>
-                                                <li class="wc_payment_method payment_method_paypal">
-                                                    <input id="metode_pemb" type="radio" class="input-radio"
-                                                        name="metode_pemb" value="bank_bca"
-                                                        data-order_button_text="Proceed to BankBca" />
-                                                    <label for="bank_bca">
-                                                        Bank BCA a/n Volvo Budi 98989289382983
-                                                    </label>
-                                                </li>
-                                                <li class="wc_payment_method payment_method_paypal">
-                                                    <input id="metode_pemb" type="radio" class="input-radio"
-                                                        name="metode_pemb" value="bank_bni"
-                                                        data-order_button_text="Proceed to BankBni" />
-                                                    <label for="bank_bni">
-                                                        Bank BNI a/n Volvo Budi 123912931922
-                                                    </label>
-                                                    <div class="payment_box payment_method_paypal">
-                                                        <p>Lakukan pembayaran dengan cara melakukan transfer terhadap salah
-                                                            satu bank yang tersedia.</p>
-                                                    </div>
-                                                    <p class="payment_box payment_method_paypal"
-                                                        id="billing_first_name_field">
-                                                        <label for="bukti_bayar" class="">Upload Bukti Pembayaran
-                                                            Anda : </label>
-                                                        <input type="file" class="" name="bukti_bayar"
-                                                            id="bukti_bayar" placeholder="Upload Bukti Pembayaran Anda"
-                                                            value="" />
-                                                    </p>
-                                                </li>
-                                            </ul>
-
-                                            <div class="form-row place-order">
-                                                <button class="btn btn-primary" id="submitBtn" value="create"
-                                                    name="submitBtn" type="submit">
-                                                    Submit
-                                                </button>
-                                                {{-- <input type="submit" class="button alt"
-                                                    name="submitBtn" id="submitBtn"
-                                                    value="create" /> --}}
-                                            </div>
-
                                         </div>
                                     </div>
                                     <!-- /Review Order -->

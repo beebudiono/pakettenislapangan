@@ -56,14 +56,14 @@
 
                                                 </div>
                                                 <div class="sc_price_block_link">
-                                                    <a href="{{ route('checkout', $item->id) }}"
+                                                    <a href="{{ route('daftar.show', $item->id) }}"
                                                         class="sc_button sc_button_square sc_button_style_filled sc_button_size_large">
                                                         <span class="cube flip-to-top">
                                                             <span class="default-state">
-                                                                <span>Order now</span>
+                                                                <span>Lihat Detail</span>
                                                             </span>
                                                             <span class="active-state">
-                                                                <span>Order now</span>
+                                                                <span>Lihat Detail</span>
                                                             </span>
                                                         </span>
                                                     </a>
