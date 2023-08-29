@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('status_bo')->default('waiting');
             $table->string('bukti_bayar');
             $table->string('lap_lat');
+            $table->string('type_lapangan');
             $table->dateTime('start')->nullable();
             $table->dateTime('end')->nullable();
             $table->date('tgl_transaksi')->default(DB::raw('CURRENT_TIMESTAMP'));

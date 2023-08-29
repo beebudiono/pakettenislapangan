@@ -31,7 +31,7 @@ class CheckoutController extends Controller
             'end' => 'required',
         ]);
 
-        //check if validation fails
+        // check if validation fails
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()->all()]);
         }
@@ -53,6 +53,7 @@ class CheckoutController extends Controller
                 'paket_id' => $request->input('paket_id'),
                 'bukti_bayar' => $fileName,
                 'lap_lat' => $request->input('lap_lat'),
+                'type_lapangan' => $request->input('type_lapangan'),
                 'start' => $request->input('start'),
                 'end' => $request->input('end'),
             ]);

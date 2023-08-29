@@ -31,14 +31,10 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         if (Auth::user()->level == 'admin') {
-
             return redirect()->route('dashboard');
-
-        } elseif (Auth::user()->level == 'pelanggan') {
-
-            return redirect('/');
+        } else if (Auth::user()->level == 'user') {
+            return redirect()->route('homepage');
         }
-
     }
 
     /**

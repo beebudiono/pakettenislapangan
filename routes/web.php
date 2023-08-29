@@ -81,8 +81,4 @@ Route::group(['middleware' => ['role:user', 'auth']], function () {
 });
 
 
-Route::get('/coba', function () {
-    return PaketLatihan::with(['detail'])->where('id', 1)->where('status', 'aktif')->get();
-});
-
 require __DIR__ . '/auth.php';

@@ -21,22 +21,11 @@ class UserRolePermissionSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
-            'level' => 'admin',
         ];
 
         DB::beginTransaction();
 
         try {
-            $admin = User::create(array_merge([
-                'email' => 'admin@gmail.com',
-                'name' => 'Admin',
-            ], $default_user_value));
-
-            $user = User::create(array_merge([
-                'email' => 'user@gmail.com',
-                'name' => 'User',
-            ], $default_user_value));
-
             $role_admin = Role::create(['name' => 'admin']);
             $role_user = Role::create(['name' => 'user']);
 
@@ -46,6 +35,19 @@ class UserRolePermissionSeeder extends Seeder
             $permission = Permission::create(['name' => 'delete role']);
 
             $role_admin->givePermissionTo('read role', 'create role', 'update role', 'delete role');
+
+            
+            $admin = User::create(array_merge([
+                'email' => 'admin@gmail.com',
+                'name' => 'Admin',
+                'level' => 'admin',
+            ], $default_user_value));
+
+            $user = User::create(array_merge([
+                'email' => 'user@gmail.com',
+                'name' => 'User',
+                'level' => 'user',
+            ], $default_user_value));
 
             $admin->assignRole('admin');
             $user->assignRole('user');

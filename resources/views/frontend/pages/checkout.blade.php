@@ -153,6 +153,15 @@
                                                     </p>
                                                 </li>
                                                 <li>
+                                                    <p class="form-row form-row form-row-wide validate-required"id="">
+                                                        <label for="lap_lat" class="">Pilih Tipe Lapangan</label>
+                                                        <select name="type_lapangan" id="type_lapangan" class="input-text">
+                                                            <option value="indoor">Indoor</option>
+                                                            <option value="outdoor">outdoor</option>
+                                                        </select>
+                                                    </p>
+                                                </li>
+                                                <li>
                                                     <p class="form-row form-row form-row-wide address-field validate-required"
                                                         id="billing_city_field">
                                                         <label for="start" class="">Masukkan Tanggal / Waktu
@@ -260,6 +269,7 @@
             formData.append('user_id', $("#user_id").val());
             formData.append('paket_id', $("#paket_id").val());
             formData.append('lap_lat', $("#lap_lat").val());
+            formData.append('type_lapangan', $("#type_lapangan").val());
             formData.append('start', $("#start").val());
             formData.append('end', $("#end").val());
             formData.append('metode_pemb', $("#metode_pemb:checked").val());

@@ -62,4 +62,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Transaksi::class, 'user_id');
     }
+
+    public function getRedirectRoute()
+    {
+        return match((string)$this->level) {
+            "admin" => 'dashboard',
+            "user"  => '/',
+        };
+    }
 }
