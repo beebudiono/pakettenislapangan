@@ -60,6 +60,41 @@
             <!-- Page Content Wrap -->
             @yield('content')
             <!-- /Page Content Wrap -->
+
+            <footer class="footer_wrap widget_area scheme_original">
+                <div class="footer_wrap_inner widget_area_inner">
+                    <div class="content_wrap">
+                        <div class="columns_wrap">
+                            <!-- Widget: Socials -->
+                            <aside class="column-1_4 widget widget_socials">
+                                <div class="widget_inner">
+                                    <div class="logo">
+                                        <a href="index.html">
+                                            <img src="{{ asset("assets/lapangan.jpg") }}" class="logo_main" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="logo_descr">Lorem ipsum dolor sit amet, consect etur adipisicing elit,
+                                        sed do eiusmod tempor incidt dolore magna aliqua.</div>
+                                </div>
+                            </aside><!-- /Widget: Socials --><!-- Widget: Recent Entries -->
+                            <aside class="column-1_4 widget widget_text">
+                                <h5 class="widget_title">Contact us</h5>
+                                <div class="textwidget">
+                                    <strong>Address</strong>
+                                    <p> 8500 Lorem Street, Chicago, IL, 55030</p>
+                                    <strong>Call Us</strong>
+                                    <p>(123) 456-78-90</p>
+                                    <strong>Email</strong>
+                                    <p>sales@yoursite.com</p>
+                                </div>
+                            </aside><!-- /Widget: Text --><!-- Widget: RecentPosts -->
+                            
+                            <!-- /Widget: RecentPosts -->
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
             <!-- Copyright -->
             <div class="copyright_wrap copyright_style_menu">
                 <div class="copyright_wrap_inner">

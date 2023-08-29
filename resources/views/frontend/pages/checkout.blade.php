@@ -32,7 +32,6 @@
                                     <h3 id="order_review_heading">Pesanan Anda</h3>
                                     <!-- Review Order -->
                                     <div id="order_review" class="woocommerce-checkout-review-order">
-                                        {{-- @foreach ($paket as $item) --}}
                                         <input type="hidden" name="user_id" id="user_id" value="{{ Auth::user()->id }}">
                                         <input type="hidden" name="paket_id" id="paket_id" value="{{ $paket->id }}">
                                         <table class="shop_table woocommerce-checkout-review-order-table">
@@ -133,13 +132,11 @@
                                             <tfoot>
                                                 <tr class="order-total">
                                                     <th>Total</th>
-                                                    <td><strong><span class="amount">Rp.
-                                                                {{ number_format($paket->harga) }}</span></strong>
+                                                    <td><strong><span class="amount">Rp. {{ number_format($paket->harga) }}</span></strong>
                                                     </td>
                                                 </tr>
                                             </tfoot>
                                         </table>
-                                        {{-- @endforeach --}}
                                         <div class="alert alert-danger alert-dismissible fade show" role="alert"
                                             style="display: none;" style="color: red">
                                         </div>
