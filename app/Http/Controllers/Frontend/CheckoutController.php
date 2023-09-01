@@ -52,7 +52,7 @@ class CheckoutController extends Controller
                 'user_id' => $request->input('user_id'),
                 'paket_id' => $request->input('paket_id'),
                 'bukti_bayar' => $fileName,
-                'lap_lat' => $request->input('lap_lat'),
+                'lap_lat' => Transaksi::LAPANGANLATIHAN,
                 'type_lapangan' => $request->input('type_lapangan'),
                 'start' => $request->input('start'),
                 'end' => $request->input('end'),

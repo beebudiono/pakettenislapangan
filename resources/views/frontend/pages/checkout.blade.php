@@ -143,16 +143,6 @@
                                         <div id="payment" class="woocommerce-checkout-payment">
                                             <ul class="wc_payment_methods payment_methods methods">
                                                 <li>
-                                                    <p class="form-row form-row form-row-wide address-field validate-required"
-                                                        id="billing_city_field">
-                                                        <label for="lap_lat" class="">Masukkan Lapangan Tempat Anda
-                                                            Latihan</label>
-                                                        <input type="text" class="input-text " name="lap_lat"
-                                                            id="lap_lat" placeholder="Nama Lapangan / Alamat Lapangan"
-                                                            value="" />
-                                                    </p>
-                                                </li>
-                                                <li>
                                                     <p class="form-row form-row form-row-wide validate-required"id="">
                                                         <label for="lap_lat" class="">Pilih Tipe Lapangan</label>
                                                         <select name="type_lapangan" id="type_lapangan" class="input-text">
@@ -268,7 +258,6 @@
             formData.append('bukti_bayar', img.files[0]);
             formData.append('user_id', $("#user_id").val());
             formData.append('paket_id', $("#paket_id").val());
-            formData.append('lap_lat', $("#lap_lat").val());
             formData.append('type_lapangan', $("#type_lapangan").val());
             formData.append('start', $("#start").val());
             formData.append('end', $("#end").val());

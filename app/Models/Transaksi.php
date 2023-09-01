@@ -9,6 +9,8 @@ class Transaksi extends Model
 {
     use HasFactory;
 
+    const LAPANGANLATIHAN = "UNESA";
+
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
     public function pelanggan()
