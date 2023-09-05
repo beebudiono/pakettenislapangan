@@ -22,16 +22,13 @@ class CheckoutController extends Controller
 
     public function store(Request $request)
     {
-        //define validation rules
         $validator = Validator::make($request->all(), [
             'metode_pemb' => 'required|in:bank_bca,bank_bri,bank_bni',
             'bukti_bayar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'lap_lat' => 'required',
             'start' => 'required',
             'end' => 'required',
         ]);
 
-        // check if validation fails
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()->all()]);
         }
@@ -46,8 +43,7 @@ class CheckoutController extends Controller
             $fileName = 'bukti-' . time() . '.' . $image->getClientOriginalExtension();
             $image->storeAs('uploads/img/', $fileName, 'public');
 
-            // Store Data
-            $transaksi = Transaksi::create([
+            Transaksi::create([
                 'metode_pemb' => $request->input('metode_pemb'),
                 'user_id' => $request->input('user_id'),
                 'paket_id' => $request->input('paket_id'),
