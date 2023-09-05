@@ -17,11 +17,10 @@
                             <div class="sc_content content_wrap">
                                 <h3
                                     class="sc_title sc_title_underline sc_align_center text_align_center font_weight_600 font_size_3_571em">
-                                    Choose your Package</h3>
+                                    Menu Paket Pelatihan Tenis Lapangan</h3>
                                 <div class="text_uppercase margin_bottom_70_imp">
                                     <p class="price_blocks_subtitle text_align_center add_color_2 margin_auto">
-                                        Tennis Club is honored to work with the country’s league best tennis
-                                        players that now can become your personal coach and help you win
+                                        Silakan Memilih Paket Yang Sudah Tersedia Dibawah ini, Sesuai Kebutuhan Anda !
                                     </p>
                                 </div>
                                 <div class="row">
