@@ -13,8 +13,7 @@
                     class="sc_title sc_title_underline sc_align_center margin_top_null text_align_center font_weight_600 font_size_3_571em">
                     Our Club Coaches</h3>
                 <div class="text_uppercase margin_bottom_50_imp club_coaches_subtitle">
-                    <p class="text_align_center add_color_2">Tennis Club is honored to work with the country’s league best
-                        tennis players that now can become your personal coach and help you win</p>
+                    <p class="text_align_center add_color_2">Silakan Memilih Paket Yang Sudah Tersedia Dibawah ini, Sesuai Kebutuhan Anda !</p>
                 </div>
                 <!-- Team wrap -->
                 <div class="sc_team_wrap">

@@ -125,6 +125,11 @@
                                                     </td>
                                                     <td class="product-total">
                                                         <ul>
+                                                            <li>Lapangan hanya menyediakan 1 tempat lokasi</li>
+                                                            <li>Lapangan tenis hanya terdapat 2 lapangan 1 indor dan 1 outdor</li>
+                                                            <li>Jam pembelajaran dimulai start pukul 07.00 sampai pukul 21.00 </li>
+                                                            <li>Maksimal dan minimal pemesanan pelatihan hanya bisa 2 jam</li>
+                                                            <li>Pemesanan wajib dilakukan H-1 / memesan sekarang untuk hari besok</li>
                                                             <li>Wajib membawa raket tenis pribadi</li>
                                                             <li>Wajib mengganti bola apabila di hilangkan oleh pelanggan</li>
                                                             <li>Wajib membawa sepatu pribadi yang memiliki spesifikasi tenis</li>

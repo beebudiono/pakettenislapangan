@@ -70,25 +70,24 @@
                                 <div class="widget_inner">
                                     <div class="logo">
                                         <a href="index.html">
-                                            <img src="{{ asset("assets/lapangan.jpg") }}" class="logo_main" alt="">
+                                            <img src="{{ asset("assets/Lapangantenis.jpg") }}" class="logo_main" alt="">
                                         </a>
                                     </div>
-                                    <div class="logo_descr">Lorem ipsum dolor sit amet, consect etur adipisicing elit,
-                                        sed do eiusmod tempor incidt dolore magna aliqua.</div>
+                                    <div class="logo_descr">Lokasi Tempat Lapangan Tenis Unniversitas Negeri Surabaya pelatihan tenis memiliki 1 indor dan 1 outdor lapangan..</div>
                                 </div>
                             </aside><!-- /Widget: Socials --><!-- Widget: Recent Entries -->
                             <aside class="column-1_4 widget widget_text">
                                 <h5 class="widget_title">Contact us</h5>
                                 <div class="textwidget">
-                                    <strong>Address</strong>
-                                    <p> 8500 Lorem Street, Chicago, IL, 55030</p>
-                                    <strong>Call Us</strong>
-                                    <p>(123) 456-78-90</p>
+                                    <strong>Alamat</strong>
+                                    <p> Jl. Lidah Wetan V No. 45, Lidah Wetan, Lakarsantri 60213 Surabaya Jawa Timur</p>
+                                    <strong>No telp</strong>
+                                    <p>+62 812-3315-1168</p>
                                     <strong>Email</strong>
-                                    <p>sales@yoursite.com</p>
+                                    <p>unesa.ac.id</p>
                                 </div>
                             </aside><!-- /Widget: Text --><!-- Widget: RecentPosts -->
-                            
+
                             <!-- /Widget: RecentPosts -->
                         </div>
                     </div>
