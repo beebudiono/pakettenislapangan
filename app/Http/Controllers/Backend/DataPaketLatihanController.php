@@ -104,7 +104,7 @@ class DataPaketLatihanController extends Controller
             return response()->json(['errors' => $validator->errors()->all()]);
         }
 
-        $user = PaketLatihan::updateOrCreate([
+        $paket = PaketLatihan::updateOrCreate([
             'id' => $request->id
         ], [
             'nama_paket' => $request->nama_paket,
@@ -136,7 +136,7 @@ class DataPaketLatihanController extends Controller
                 'nama_ballboy3' => $request->nama_ballboy3,
                 'materi' => $request->materi,
                 'peralatan' => $request->peralatan,
-                'paket_id' => $user->id
+                'paket_id' => $paket->id
             ]
         );
 
