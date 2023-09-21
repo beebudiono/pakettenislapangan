@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('data_pelatihs', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->string('nama_pelatih', 50);
             $table->text('pengalaman');
-            $table->string('img_pelatih', 100);
+            $table->string('img_pelatih', 100)->nullable();
             $table->string('status', 25)->default('aktif');
             $table->timestamps();
         });

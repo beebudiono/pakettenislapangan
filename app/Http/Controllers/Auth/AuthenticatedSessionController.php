@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -30,11 +31,11 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        if (Auth::user()->level == 'admin') {
-            return redirect()->route('dashboard');
-        } else if (Auth::user()->level == 'user') {
+        if (Auth::user()->level == User::LEVEL_USER) {
             return redirect()->route('homepage');
         }
+
+        return redirect()->route('dashboard');
     }
 
     /**

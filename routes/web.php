@@ -32,7 +32,7 @@ Route::get('/', function () {
     return view('frontend.dashboard');
 })->name('homepage');
 
-Route::group(['middleware' => ['role:admin', 'auth']], function () {
+Route::group(['middleware' => ['role:admin|trainer', 'auth']], function () {
 
     // Dashboard
     Route::get('/dashboard', function () {
