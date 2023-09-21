@@ -84,6 +84,13 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="col-md-3 control-label" for="email">Email</label>
+                        <div class="col-md-9">
+                            <input type="email" id="email" name="email" class="form-control"
+                            placeholder="Masukkan Nama Pelatih">
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label class="col-md-3 control-label" for="img_pelatih">Foto Pelatih</label>
                         <div class="col-md-9">
                             <input type="file" id="img_pelatih" name="img_pelatih" class="form-control"
@@ -226,12 +233,14 @@
             var img = document.getElementById('img_pelatih');
             var nama_pelatih = $('#nama_pelatih').val();
             var pengalaman = $('#pengalaman').val();
+            var email = $('#email').val();
             var id = $('#pelatih_id').val();
 
             var formData = new FormData();
             formData.append('img_pelatih', img.files[0]);
             formData.append('nama_pelatih', nama_pelatih);
             formData.append('pengalaman', pengalaman);
+            formData.append('email', email);
             formData.append('pelatih_id', id);
 
             $.ajax({

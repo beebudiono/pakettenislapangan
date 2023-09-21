@@ -35,7 +35,7 @@ class UserRolePermissionSeeder extends Seeder
             $permission = Permission::create(['name' => 'create role']);
             $permission = Permission::create(['name' => 'update role']);
             $permission = Permission::create(['name' => 'delete role']);
-            $permission = Permission::create(['name' => "pelatih"]);
+            $permission = Permission::create(['name' => "master"]);
             $permission = Permission::create(['name' => 'transaction-list']);
             $permission = Permission::create(['name' => 'transaction-detail']);
             $permission = Permission::create(['name' => 'transaction-update']);
@@ -44,7 +44,7 @@ class UserRolePermissionSeeder extends Seeder
             $role_admin->givePermissionTo(
                 'read role', 'create role', 
                 'update role', 'delete role', 
-                'pelatih',
+                'master',
                 'transaction-list', 'transaction-detail',
                 'transaction-update', 'transaction-delete'
             );

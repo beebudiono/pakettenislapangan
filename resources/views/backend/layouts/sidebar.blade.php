@@ -21,8 +21,8 @@
                 <div class="sidebar-user-links">
                     <a href="page_ready_user_profile.html" data-toggle="tooltip" data-placement="bottom"
                         title="Profile"><i class="gi gi-user"></i></a>
-                    <a href="page_ready_inbox.html" data-toggle="tooltip" data-placement="bottom" title="Messages"><i
-                            class="gi gi-envelope"></i></a>
+                    {{-- <a href="page_ready_inbox.html" data-toggle="tooltip" data-placement="bottom" title="Messages"><i
+                            class="gi gi-envelope"></i></a> --}}
                     <!-- Opens the user settings modal that can be found at the bottom of each page (page_footer.html in PHP version) -->
                     <a href="javascript:void(0)" class="enable-tooltip" data-placement="bottom" title="Settings"
                         onclick="$('#modal-user-settings').modal('show');"><i class="gi gi-cogwheel"></i></a>
@@ -62,6 +62,8 @@
                         </li>
                     </ul>
                 </li> --}}
+
+                @role("admin")
                 <li class="sidebar-header">
                     <span class="sidebar-header-title">Data Master</span>
                 </li>
@@ -86,6 +88,8 @@
                         </li>
                     </ul>
                 </li>
+                @endrole
+
                 <li class="sidebar-header">
                     <span class="sidebar-header-title">Data Transaksi</span>
                 </li>

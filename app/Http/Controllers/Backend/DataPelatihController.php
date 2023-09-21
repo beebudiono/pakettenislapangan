@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\DataPelatih;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Str;
 
 class DataPelatihController extends Controller
 {
@@ -91,6 +93,7 @@ class DataPelatihController extends Controller
         $validator = Validator::make($request->all(), [
             'nama_pelatih' => 'required',
             'pengalaman' => 'required',
+            "email" => 'required|unique:users'
             // 'img_pelatih' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -108,9 +111,33 @@ class DataPelatihController extends Controller
             $nama_pelatih = $request->input('nama_pelatih');
             $pengalaman = $request->input('pengalaman');
 
+
+
             // Store Data or Update Data
-            $user = DataPelatih::updateOrCreate([
+            $userID = 0;
+            $user = User::where("email", $request->input("email"))->first();
+            if($user){ // user exist do update
+                $user->where("email", $request->input("email"))->update([
+                    "name" => $nama_pelatih,
+                ]);
+                $userID = $user->id;
+            }else{
+                $newTrainer = User::create([
+                    'email' => $request->input("email"),
+                    'name' => 'trainer default',
+                    'level' => User::LEVEL_TRAINER,
+                    'email_verified_at' => now(),
+                    'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+                    'remember_token' => Str::random(10),
+                ]);
+
+                $newTrainer->assignRole("trainer");
+                $userID = $newTrainer->id;
+            }
+
+            DataPelatih::updateOrCreate([
                 'id' => $request->input('pelatih_id'),
+                "user_id" => $userID,
             ], [
                 'nama_pelatih' => $nama_pelatih,
                 'pengalaman' => $pengalaman,
@@ -122,8 +149,30 @@ class DataPelatihController extends Controller
             $pengalaman = $request->input('pengalaman');
 
             // Store Data or Update Data
-            $user = DataPelatih::updateOrCreate([
+            $userID = 0;
+            $user = User::where("email", $request->input("email"))->first();
+            if($user){ // user exist do update
+                $user->where("email", $request->input("email"))->update([
+                    "name" => $nama_pelatih,
+                ]);
+                $userID = $user->id;
+            }else{
+                $newTrainer = User::create([
+                    'email' => $request->input("email"),
+                    'name' => 'trainer default',
+                    'level' => User::LEVEL_TRAINER,
+                    'email_verified_at' => now(),
+                    'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+                    'remember_token' => Str::random(10),
+                ]);
+
+                $newTrainer->assignRole("trainer");
+                $userID = $newTrainer->id;
+            }
+
+            DataPelatih::updateOrCreate([
                 'id' => $request->input('pelatih_id'),
+                "user_id" => $userID,
             ], [
                 'nama_pelatih' => $nama_pelatih,
                 'pengalaman' => $pengalaman,
@@ -175,16 +224,26 @@ class DataPelatihController extends Controller
      */
     public function destroy(string $id)
     {
-        $user = DataPelatih::find($id);
-        if ($user->status == 'aktif') {
-            $user->update([
+        $trainer = DataPelatih::find($id);
+        if ($trainer->status == 'aktif') {
+            $trainer->update([
                 'status' => 'non-aktif'
             ]);
+
+            User::where("user_id", $trainer->user_id)->update([
+                "status" => "non-aktif"
+            ]);
+
             return response()->json(['status' => 'Berhasil Mengarsipkan Data!']);
         } else {
-            $user->update([
+            $trainer->update([
                 'status' => 'aktif'
             ]);
+
+            User::where("user_id", $trainer->user_id)->update([
+                "status" => "aktif"
+            ]);
+
             return response()->json(['status' => 'Berhasil Menampilkan Data!']);
         }
     }

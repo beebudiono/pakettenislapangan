@@ -44,18 +44,20 @@ Route::group(['middleware' => ['role:admin|trainer', 'auth']], function () {
         return view('backend.dashboard', compact('paket', 'aduan', 'transaksi', 'user', 'pelatih'));
     })->name('dashboard');
 
-    // Data Pelanggan
-    Route::resource('pelanggan', PelangganController::class);
+    Route::group(["middleware" => ["role:admin"]], function(){
+        // Data Pelanggan
+        Route::resource('pelanggan', PelangganController::class);
 
-    // Data Pelatih
-    Route::resource('dataPelatih', DataPelatihController::class);
-    Route::get('/getDataPelatih', DataPelatihController::class . '@getDataPelatih');
+        // Data Pelatih
+        Route::resource('dataPelatih', DataPelatihController::class);
+        Route::get('/getDataPelatih', DataPelatihController::class . '@getDataPelatih');
 
-    // Data Paket Latihan
-    Route::resource('paket', DataPaketLatihanController::class);
+        // Data Paket Latihan
+        Route::resource('paket', DataPaketLatihanController::class);
 
-    // Data Pengaduan
-    Route::resource('pengaduan', DataPengaduanController::class);
+        // Data Pengaduan
+        Route::resource('pengaduan', DataPengaduanController::class);
+    });
 
     // Data Transaksi
     Route::resource('transaksi', TransaksiController::class);
