@@ -5,7 +5,7 @@
         <!-- Sidebar Content -->
         <div class="sidebar-content">
             <!-- Brand -->
-            <a href="index.html" class="sidebar-brand">
+            <a href="{{ route("dashboard") }}" class="sidebar-brand">
                 <i class="gi gi-flash"></i><span class="sidebar-nav-mini-hide"><strong>Trainer</strong>Tennis</span>
             </a>
             <!-- END Brand -->
@@ -13,14 +13,16 @@
             <!-- User Info -->
             <div class="sidebar-section sidebar-user clearfix sidebar-nav-mini-hide">
                 <div class="sidebar-user-avatar">
-                    <a href="page_ready_user_profile.html">
+                    <a href="#!">
                         <img src="{{ asset('backend/img/placeholders/avatars/avatar2.jpg') }}" alt="avatar">
                     </a>
                 </div>
+
                 <div class="sidebar-user-name">{{ ucfirst(Auth::user()->name) }}</div>
+
                 <div class="sidebar-user-links">
-                    <a href="page_ready_user_profile.html" data-toggle="tooltip" data-placement="bottom"
-                        title="Profile"><i class="gi gi-user"></i></a>
+                    {{-- <a href="page_ready_user_profile.html" data-toggle="tooltip" data-placement="bottom"
+                        title="Profile"><i class="gi gi-user"></i></a> --}}
                     {{-- <a href="page_ready_inbox.html" data-toggle="tooltip" data-placement="bottom" title="Messages"><i
                             class="gi gi-envelope"></i></a> --}}
                     <!-- Opens the user settings modal that can be found at the bottom of each page (page_footer.html in PHP version) -->
@@ -97,10 +99,13 @@
                     <a href="{{ route('transaksi.index') }}" class="{{ request()->segment(1) == 'transaksi' ? 'active' : '' }}"><i class="gi gi-share_alt sidebar-nav-icon"></i><span
                             class="sidebar-nav-mini-hide">Transaksi</span></a>
                 </li>
+
+                @role("admin")
                 <li>
                     <a href="{{ route('history.index') }}" class="{{ request()->segment(1) == 'history' ? 'active' : '' }}"><i class="gi gi-repeat sidebar-nav-icon"></i><span
                             class="sidebar-nav-mini-hide">History Transaksi</span></a>
                 </li>
+                @endrole
             </ul>
             <!-- END Sidebar Navigation -->
         </div>
