@@ -23,90 +23,11 @@
         </div>
 
 
-        <!-- Mini Top Stats Row -->
+        @role("admin")
         <div class="row">
             <div class="col-sm-6 col-lg-3">
                 <!-- Widget -->
-                <a href="page_ready_article.html" class="widget widget-hover-effect1">
-                    <div class="widget-simple">
-                        <div class="widget-icon pull-left themed-background-autumn animation-fadeIn">
-                            <i class="fa fa-file-text"></i>
-                        </div>
-                        <h3 class="widget-content text-right animation-pullDown">
-                            Jumlah <strong>Paket Latihan</strong><br>
-                            <small>{{ $paket }} Paket Latihan</small>
-                        </h3>
-                    </div>
-                </a>
-                <!-- END Widget -->
-            </div>
-            <div class="col-sm-6 col-lg-3">
-                <!-- Widget -->
-                <a href="page_comp_charts.html" class="widget widget-hover-effect1">
-                    <div class="widget-simple">
-                        <div class="widget-icon pull-left themed-background-spring animation-fadeIn">
-                            <i class="gi gi-usd"></i>
-                        </div>
-                        <h3 class="widget-content text-right animation-pullDown">
-                            Total <strong>Transaksi</strong><br>
-                            <small>{{ $transaksi }} Transaksi</small>
-                        </h3>
-                    </div>
-                </a>
-                <!-- END Widget -->
-            </div>
-            <div class="col-sm-6 col-lg-3">
-                <!-- Widget -->
-                <a href="page_ready_inbox.html" class="widget widget-hover-effect1">
-                    <div class="widget-simple">
-                        <div class="widget-icon pull-left themed-background-fire animation-fadeIn">
-                            <i class="gi gi-envelope"></i>
-                        </div>
-                        <h3 class="widget-content text-right animation-pullDown">
-                            Jumlah <strong>Pengaduan </strong>
-                            <small>{{ $aduan }} Pengaduan</small>
-                        </h3>
-                    </div>
-                </a>
-                <!-- END Widget -->
-            </div>
-            <div class="col-sm-6 col-lg-3">
-                <!-- Widget -->
-                <a href="page_comp_gallery.html" class="widget widget-hover-effect1">
-                    <div class="widget-simple">
-                        <div class="widget-icon pull-left themed-background-amethyst animation-fadeIn">
-                            <i class="gi gi-picture"></i>
-                        </div>
-                        <h3 class="widget-content text-right animation-pullDown">
-                            +30 <strong>Photos</strong>
-                            <small>Gallery</small>
-                        </h3>
-                    </div>
-                </a>
-                <!-- END Widget -->
-            </div>
-            <div class="col-sm-6">
-                <!-- Widget -->
-                <a href="page_comp_charts.html" class="widget widget-hover-effect1">
-                    <div class="widget-simple">
-                        <div class="widget-icon pull-left themed-background animation-fadeIn">
-                            <i class="gi gi-wallet"></i>
-                        </div>
-                        <div class="pull-right">
-                            <!-- Jquery Sparkline (initialized in j/pages/index.s), for more examples you can check out http://omnipotent.net/jquery.sparkline/#s-about -->
-                            <span id="mini-chart-sales"></span>
-                        </div>
-                        <h3 class="widget-content animation-pullDown visible-lg">
-                            Jumlah <strong>Pelatih</strong>
-                            <small>{{ $pelatih }} orang</small>
-                        </h3>
-                    </div>
-                </a>
-                <!-- END Widget -->
-            </div>
-            <div class="col-sm-6">
-                <!-- Widget -->
-                <a href="page_widgets_stats.html" class="widget widget-hover-effect1">
+                <a href="#!" class="widget widget-hover-effect1">
                     <div class="widget-simple">
                         <div class="widget-icon pull-left themed-background animation-fadeIn">
                             <i class="gi gi-crown"></i>
@@ -117,14 +38,104 @@
                             <span id="mini-chart-brand"></span>
                         </div>
                         <h3 class="widget-content animation-pullDown visible-lg">
-                            Jumlah <strong>Pelanggan</strong>
+                            <strong>Pelanggan</strong>
                             <small>{{ $user }} orang</small>
                         </h3>
                     </div>
                 </a>
                 <!-- END Widget -->
             </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <!-- Widget -->
+                <a href="#!" class="widget widget-hover-effect1">
+                    <div class="widget-simple">
+                        <div class="widget-icon pull-left themed-background-autumn animation-fadeIn">
+                            <i class="fa fa-file-text"></i>
+                        </div>
+                        <h3 class="widget-content text-right animation-pullDown">
+                            <strong>Paket Latihan</strong><br>
+                            <small>{{ $paket }} Paket Latihan</small>
+                        </h3>
+                    </div>
+                </a>
+                <!-- END Widget -->
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <!-- Widget -->
+                <a href="#!" class="widget widget-hover-effect1">
+                    <div class="widget-simple">
+                        <div class="widget-icon pull-left themed-background-spring animation-fadeIn">
+                            <i class="gi gi-usd"></i>
+                        </div>
+                        <h3 class="widget-content text-right animation-pullDown">
+                            <strong>Transaksi</strong><br>
+                            <small>{{ $transaksi }} Transaksi</small>
+                        </h3>
+                    </div>
+                </a>
+                <!-- END Widget -->
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <!-- Widget -->
+                <a href="#!" class="widget widget-hover-effect1">
+                    <div class="widget-simple">
+                        <div class="widget-icon pull-left themed-background-fire animation-fadeIn">
+                            <i class="gi gi-envelope"></i>
+                        </div>
+                        <h3 class="widget-content text-right animation-pullDown">
+                            <strong>Pengaduan </strong>
+                            <small>{{ $aduan }} Pengaduan</small>
+                        </h3>
+                    </div>
+                </a>
+                <!-- END Widget -->
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+                <!-- Widget -->
+                <a href="#!" class="widget widget-hover-effect1">
+                    <div class="widget-simple">
+                        <div class="widget-icon pull-left themed-background animation-fadeIn">
+                            <i class="gi gi-wallet"></i>
+                        </div>
+                        <div class="pull-right">
+                            <!-- Jquery Sparkline (initialized in j/pages/index.s), for more examples you can check out http://omnipotent.net/jquery.sparkline/#s-about -->
+                            <span id="mini-chart-sales"></span>
+                        </div>
+                        <h3 class="widget-content animation-pullDown visible-lg">
+                            <strong>Pelatih</strong>
+                            <small>{{ $pelatih }} orang</small>
+                        </h3>
+                    </div>
+                </a>
+                <!-- END Widget -->
+            </div>
         </div>
+        @endrole
+
+        @role("trainer")
+        <div class="row">
+            <div class="col-sm-12 col-lg-4">
+                <!-- Widget -->
+                <a href="#!" class="widget widget-hover-effect1">
+                    <div class="widget-simple">
+                        <div class="widget-icon pull-left themed-background-spring animation-fadeIn">
+                            <i class="gi gi-usd"></i>
+                        </div>
+                        <h3 class="widget-content text-right animation-pullDown">
+                            <strong>Transaksi</strong><br>
+                            <small>{{ $transaksi }} Transaksi</small>
+                        </h3>
+                    </div>
+                </a>
+                <!-- END Widget -->
+            </div>
+        </div>
+
+        @endrole
         <!-- END Mini Top Stats Row -->
     </div>
     <!-- END Page Content -->

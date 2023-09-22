@@ -22,4 +22,13 @@ class Transaksi extends Model
     {
         return $this->belongsTo(PaketLatihan::class);
     }
+
+    public function scopeByRole($query, $user)
+    {
+        if($user->level == User::LEVEL_TRAINER){
+            return $query->where("main_trainer_id", $user->id);
+        }
+
+        return $query;
+    }
 }

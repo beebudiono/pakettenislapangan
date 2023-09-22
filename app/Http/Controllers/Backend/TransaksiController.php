@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Transaksi;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\Facades\DataTables;
 
 class TransaksiController extends Controller
@@ -14,61 +16,72 @@ class TransaksiController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->ajax()) {
-
-            $transaksis = Transaksi::with(['pelanggan', 'paket'])->where('status_pemb', 'belum-bayar')->get();
-
-            return DataTables::of($transaksis)
-                ->addIndexColumn()
-                ->addColumn('name', function ($transaksi) {
-                    return strtoupper($transaksi->pelanggan->name);
-                })
-                ->addColumn('email', function ($transaksi) {
-                    return $transaksi->pelanggan->email;
-                })
-                ->addColumn('nohp', function ($transaksi) {
-                    return $transaksi->pelanggan->nohp;
-                })
-                ->addColumn('metode_pemb', function ($transaksi) {
-                    if ($transaksi->metode_pemb == 'bank_bca') {
-                        $metode = 'bank bca';
-                    } elseif ($transaksi->metode_pemb == 'bank_bri') {
-                        $metode = 'bank bri';
-                    } elseif ($transaksi->metode_pemb == 'bank_bni') {
-                        $metode = 'bank bni';
-                    }
-                    return strtoupper($metode);
-                })
-                ->addColumn('bukti_bayar', function ($transaksi) {
-                    $url = asset('storage/uploads/img/' . $transaksi->bukti_bayar);
-                    if ($transaksi->bukti_bayar == null) {
-                    } else {
-                        return '<a download="logo.png" href="' . $url . '" title="Logo title" download>
-                                <img src="' . $url . '" width="80px" class="img-rounded" align="center" download />
-                                </a>';
-                    }
-                })
-                ->addColumn('tgl_transaksi', function ($transaksi) {
-                    return date('d F Y', strtotime($transaksi->tgl_transaksi));
-                })
-                ->addColumn('status_pemb', function ($transaksi) {
-                    if ($transaksi->status_pemb == 'belum-bayar') {
-                        return '<div class="btn btn-danger">' . ucfirst('belum bayar') . '</div>';
-                    } else {
-                        return '<div class="btn btn-success">' . ucfirst('sudah bayar') . '</div>';
-                    }
-                })
-                ->addColumn('action', function ($transaksi) {
-                    $btn = '<button id="confirm-transaksi" data-id="' . $transaksi->id . '" class="btn btn-primary btn-md" title="Confirm"><i class="fa fa-check-circle"></i></button>';
-
-                    $btn = $btn . '<button id="decline-transaksi" data-id="' . $transaksi->id . '" class="btn btn-danger btn-md" title="Decline"><i class="fa fa-times"></i></button>';
-                    return $btn;
-                })
-                ->rawColumns(['bukti_bayar', 'status_pemb', 'action'])
-                ->make(true);
+        if(!$request->ajax()){
+            return view('backend.data-master.data-transaksi');
         }
+        
+        $user = Auth::user();
+        $transaksis = Transaksi::with(['pelanggan', 'paket'])
+                    ->where('status_pemb', 'belum-bayar')
+                    ->byRole($user)
+                    ->get();
 
-        return view('backend.data-master.data-transaksi');
+        return DataTables::of($transaksis)
+            ->addIndexColumn()
+            ->addColumn('name', function ($transaksi) {
+                return strtoupper($transaksi->pelanggan->name);
+            })
+            ->addColumn('email', function ($transaksi) {
+                return $transaksi->pelanggan->email;
+            })
+            ->addColumn('nohp', function ($transaksi) {
+                return $transaksi->pelanggan->nohp;
+            })
+            ->addColumn('metode_pemb', function ($transaksi) {
+                if ($transaksi->metode_pemb == 'bank_bca') {
+                    $metode = 'bank bca';
+                } elseif ($transaksi->metode_pemb == 'bank_bri') {
+                    $metode = 'bank bri';
+                } elseif ($transaksi->metode_pemb == 'bank_bni') {
+                    $metode = 'bank bni';
+                }
+                return strtoupper($metode);
+            })
+            ->addColumn('bukti_bayar', function ($transaksi) use ($user) {
+                if($user->level == User::LEVEL_TRAINER){
+                    return;
+                }
+                
+                if ($transaksi->bukti_bayar != null) {
+                    $url = asset('storage/uploads/img/' . $transaksi->bukti_bayar);
+                    return '<a download="logo.png" href="' . $url . '" title="Logo title" download>
+                            <img src="' . $url . '" width="80px" class="img-rounded" align="center" download />
+                            </a>';
+                }
+            })
+            ->addColumn('tgl_transaksi', function ($transaksi) {
+                return date('d F Y', strtotime($transaksi->tgl_transaksi));
+            })
+            ->addColumn('status_pemb', function ($transaksi) {
+                if ($transaksi->status_pemb == 'belum-bayar') {
+                    return '<div class="btn btn-danger">' . ucfirst('belum bayar') . '</div>';
+                } else {
+                    return '<div class="btn btn-success">' . ucfirst('sudah bayar') . '</div>';
+                }
+            })
+            ->addColumn('action', function ($transaksi) use ($user) {
+                if($user->level == User::LEVEL_TRAINER){
+                    return "-";
+                }
+
+                $btn = '<button id="confirm-transaksi" data-id="' . $transaksi->id . '" class="btn btn-primary btn-md" title="Confirm"><i class="fa fa-check-circle"></i></button>';
+
+                $btn = $btn . '<button id="decline-transaksi" data-id="' . $transaksi->id . '" class="btn btn-danger btn-md" title="Decline"><i class="fa fa-times"></i></button>';
+                return $btn;
+            })
+            ->rawColumns(['bukti_bayar', 'status_pemb', 'action'])
+            ->make(true);
+
     }
 
     public function history(Request $request)
