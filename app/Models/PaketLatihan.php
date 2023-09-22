@@ -20,4 +20,13 @@ class PaketLatihan extends Model
     {
         return $this->hasMany(BiodataPelatih::class, 'paket_id');
     }
+
+    public function checkQuotaAvailability()
+    {
+        if ($this->kuota > 0) {
+            return $this;
+        }
+
+        return null;
+    }
 }

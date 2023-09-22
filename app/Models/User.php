@@ -67,12 +67,17 @@ class User extends Authenticatable
         return $this->hasMany(Transaksi::class, 'user_id');
     }
 
+    public function package()
+    {
+        return $this->hasMany(PaketLatihan::class, "main_trainer_id");
+    }
+
     public function getRedirectRoute()
     {
         return match((string)$this->level) {
-            "admin" => 'dashboard',
+            "admin"   => 'dashboard',
             "trainer" => 'dashboard',
-            "user"  => '/',
+            "user"    => '/',
         };
     }
 }

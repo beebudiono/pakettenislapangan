@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('biodata_pelatihs', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('paket_id');
+            $table->unsignedBigInteger("main_trainer_id");
             $table->string('nama_pelatih1')->nullable();
             $table->string('nama_pelatih2')->nullable();
             $table->string('nama_pelatih3')->nullable();
@@ -24,8 +26,8 @@ return new class extends Migration
             $table->string('nama_ballboy3')->nullable();
             $table->text('materi')->nullable();
             $table->text('peralatan')->nullable();
-            $table->unsignedBigInteger('paket_id');
             $table->foreign('paket_id')->references('id')->on('paket_latihans')->onDelete('cascade');
+            $table->foreign('main_trainer_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
