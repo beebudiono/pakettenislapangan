@@ -80,4 +80,10 @@ class User extends Authenticatable
             "user"    => '/',
         };
     }
+
+    
+    public function scopeUserLevel($query)
+    {
+        return $query->where('level', self::LEVEL_USER);
+    }
 }

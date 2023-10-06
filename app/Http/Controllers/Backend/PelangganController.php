@@ -19,7 +19,7 @@ class PelangganController extends Controller
     {
         if ($request->ajax()) {
 
-            $users = User::where('level', 'pelanggan')->latest()->get();
+            $users = User::userLevel()->latest()->get();
             return Datatables::of($users)
                 ->addIndexColumn()
                 ->addColumn('name', function ($user) {
