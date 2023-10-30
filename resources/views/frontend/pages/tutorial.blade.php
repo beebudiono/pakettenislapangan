@@ -18,11 +18,14 @@
                         </h3>
                         <div class="post_descr">
                             <blockquote cite="#" class="sc_quote">
-                                <p>The price of success is hard work, dedication to the job at hand, and the determination
-                                    that whether we win or lose, we have applied the best of ourselves to the task at hand.
+                                <p>Jadikan bola sebagai sahabatmu lebih hebat lagi jadikan bola sebagai bagian dari dirimu sehingga
+                                    anda bisa mengontrol kemana ingin mengarahkan.
+
+                                    kemudian jadikan raket adalah sebagian dari tanganmu maka anda bisa mengendalikan bola dari musuh sekalipun
+                                    mendapatkan pukulan yang rumit.
                                 </p>
                                 <p class="sc_quote_title">
-                                    <a href="#">Vince Lombardi</a>
+                                    <a href="#">Mersi Budiono</a>
                                 </p>
                             </blockquote>
                         </div>
@@ -35,8 +38,11 @@
                         <div class="sc_video_player">
                             <div class="sc_video_frame sc_video_play_button hover_icon hover_icon_play" data-width="770"
                                 data-height="433"
-                                data-video="&lt;iframe class=&quot;video_frame&quot; src=&quot;https://player.vimeo.com/video/64433019?autoplay=1&quot; width=&quot;770&quot; height=&quot;433&quot; frameborder=&quot;0&quot; webkitAllowFullScreen=&quot;webkitAllowFullScreen&quot; mozallowfullscreen=&quot;mozallowfullscreen&quot; allowFullScreen=&quot;allowFullScreen&quot;&gt;&lt;/iframe&gt;">
-                                <img alt="lesson-5.jpg" src="http://placehold.it/770x434">
+                                data-video='<video class="video_frame" width="770" height="433" controls>
+                                    <source src="/assets/bermaintenis.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>'>
+                                    <img alt="/assets/backgroundtennis.jpeg" src="/assets/backgroundtennis.jpeg">
                             </div>
                         </div>
                     </div>
@@ -45,14 +51,12 @@
                             <a href="post-video.html">Video Post</a>
                         </h3>
                         <div class="post_descr">
-                            <p>Sed dapibus massa vitae ipsum aliquam sollicitudin. Aenean turpis leo, hendrerit quis
-                                bibendum sed, scelerisque nec sem. Praesent convallis lacinia pulvinar. Duis id sem urna. Ut
-                                et feugiat ligula. Vivamus tincidunt diam a lacus imperdiet tempus...</p>
+                            <p>berikut adalah salah satu cara melakukan gamme dalam permainan tenis lapangan .</p>
                         </div>
                     </div>
                 </article>
                 <!-- /Video Post -->
-                <!-- Audio Post -->
+                <!-- Audio Post
                 <article class="post_item post_item_excerpt odd post">
                     <div class="post_featured">
                         <div class="sc_audio_player sc_audio sc_audio_info" data-width="" data-height="">
@@ -79,17 +83,18 @@
                         </div>
                     </div>
                 </article>
-                <!-- /Audio Post -->
+                /Audio Post -->
                 <!-- Post without image -->
                 <article class="post_item post_item_excerpt even post">
                     <div class="post_content clearfix">
                         <h3 class="post_title">
-                            <a href="post-without-image.html">Post Without Image</a>
+                            <a href="post-without-image.html">Berikut adalah gambar sekilas contoh posisi badan yang benar</a>
                         </h3>
                         <div class="post_descr">
-                            <p>Duis auctor arcu ac mi bibendum posuere. Integer diam orci, faucibus ut mi sed, tincidunt
-                                vehicula erat. Sed ultricies tempor nunc, nec malesuada tortor vehicula ac. Curabitur
-                                imperdiet massa ac ex pretium, et mollis metus aliquet. Phasellus...</p>
+                            <p>Posisi badan sangat laah berpengaruh pada setiap pukulan karna jika posisi badan tidak benar maka
+                                akan mempengaruhi arah bola dan tujuan bola yang di tuju tidak akan sesuai dengan keinginan kita
+                                , seringkali orang lain meremehkan posisi badan se enaknya sehingga tidaklah mudah dalam mengontrol
+                                bola dari lawan. kecepatan reflek dan posisi badan sangat diperlukan dalam bermain tenis lapangan.</p>
                         </div>
                     </div>
                 </article>
@@ -102,7 +107,9 @@
                             data-old-width="770" data-old-height="434" data-interval="7977">
                             <div class="slides swiper-wrapper height_434">
                                 <div class="swiper-slide slider3_slide1">
-                                    <a href="post-gallery.html"></a>
+                                    <a href="post-gallery.html">
+                                        <img src="\assets\gayaforhand.png" alt="Deskripsi Gambar">
+                                    </a>
                                 </div>
                                 <div class="swiper-slide slider3_slide2">
                                     <a href="post-gallery.html"></a>
@@ -126,12 +133,12 @@
                     </div>
                     <div class="post_content clearfix">
                         <h3 class="post_title">
-                            <a href="post-gallery.html">Gallery Post</a>
+                            <a href="post-gallery.html">Foto di atas adalah bentuk cara memukul forehand</a>
                         </h3>
                         <div class="post_descr">
-                            <p>Duis auctor arcu ac mi bibendum posuere. Integer diam orci, faucibus ut mi sed, tincidunt
-                                vehicula erat. Sed ultricies tempor nunc, nec malesuada tortor vehicula ac. Curabitur
-                                imperdiet massa ac ex pretium, et mollis metus aliquet. Phasellus...</p>
+                            <p>pada saat melakukan pukulan forehand usahakan posisi badan sesuai dengan yang ada foto di atas
+                                maka jika teknik sudah benar maka selanjutnya titik bola agar sesuai pas mengenai senar raket
+                                yang ada di tengah sehingga dapat melakukan pukulan yang sangat sempurna.</p>
                         </div>
                     </div>
                 </article>
@@ -144,8 +151,8 @@
                         </h3>
                         <div class="post_descr">
                             <p>
-                                <a href="http://themeforest.net/user/themerex/portfolio" title="Go to ThemeREX portfolio"
-                                    target="_blank">http://themeforest.net/user/themerex/portfolio</a>
+                                <a href="https://www.youtube.com/watch?v=_J0CDqMLW94" title="lanjut ke video youtube"
+                                    target="_blank">https://www.youtube.com/watch?v=_J0CDqMLW94</a>
                             </p>
                         </div>
                     </div>

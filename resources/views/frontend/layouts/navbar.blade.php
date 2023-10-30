@@ -36,8 +36,8 @@
                 <div class="contact_logo">
                     <div class="logo">
                         <a href="index.html">
-                            <img src="http://placehold.it/290x50" class="logo_main" alt="">
-                            <img src="http://placehold.it/290x50" class="logo_fixed" alt=""></a>
+                            <img src="{{ url('/') }}/assets/TenisUtama.jpg" class="logo_main" alt="">
+                            <img src="{{ url('/') }}/assets/TenisUtama.jpg" class="logo_fixed" alt=""></a>
                     </div>
                 </div>
                 <div class="menu_main_social_wrap">

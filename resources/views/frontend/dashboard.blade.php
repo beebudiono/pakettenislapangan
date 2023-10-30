@@ -23,20 +23,18 @@
                                                     <div class="sc_column_item_inner add_color_2_bg">
                                                         <h3
                                                             class="sc_title sc_title_regular margin_top_medium margin_bottom_tiny color_white font_weight_600 font_size_3_929em">
-                                                            Welcome</h3>
+                                                            Selamat datang latihan tenis lapangan</h3>
                                                         <h6
                                                             class="sc_title sc_title_regular sc_align_center text_uppercase accent1 margin_bottom_medium ltr-spc2 text_align_center font_weight_400 font_size_0_857em">
-                                                            to our tennis club</h6>
+                                                            Latihan tenis lapangan</h6>
                                                         <div class="margin_top_tiny-">
-                                                            <p class="color_white width_90_per margin_auto">Founded in 1964
-                                                                by a
-                                                                team of professional tennis players our club is based in one
-                                                                of
-                                                                the most picturesque areas of the country and is ideal for
-                                                                family membership.</p>
+                                                            <p class="color_white width_90_per margin_auto">sejak 2022
+                                                                Kelas latihan tenis ini di bukan untuk segala kalangan umum
+                                                                siapapun boleh belajar tenis tanpa mengenal umur
+                                                                asakan ada tekat dan niatan semua akan mudah di pelajari.</p>
                                                         </div>
                                                         <figure class="sc_image sc_image_shape_square margin_bottom_medium">
-                                                            <img src="http://placehold.it/184x104" alt="" />
+                                                            <img src="{{ url('/') }}/assets/tennisterbaru.jpg" class="logo_fixed" alt=""></a>
                                                         </figure>
                                                     </div>
                                                 </div>

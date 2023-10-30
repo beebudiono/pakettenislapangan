@@ -14,7 +14,7 @@
                     data-thumb="http://placehold.it/100x50" data-rotate="0,0,0,0,0,0,0,0,0" data-saveperformance="off"
                     data-title="Slide" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="http://placehold.it/1920x584" alt="" data-bgposition="center center"
+                    <img src="{{ asset('assets/1.jpg') }}" alt="" data-bgposition="center center"
                         data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
                     <!-- LAYER NR. 1 -->
@@ -56,7 +56,7 @@
                     data-easeout="default" data-masterspeed="300" data-thumb="http://placehold.it/100x50"
                     data-rotate="0" data-saveperformance="off" data-title="Slide" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="http://placehold.it/1920x584" alt="" data-bgposition="center center"
+                    <img src="{{ asset('assets/2.jpg') }}" alt="" data-bgposition="center center"
                         data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
                     <!-- LAYER NR. 1 -->
@@ -98,7 +98,7 @@
                     data-easeout="default" data-masterspeed="300" data-thumb="http://placehold.it/100x50"
                     data-rotate="0" data-saveperformance="off" data-title="Slide" data-description="">
                     <!-- MAIN IMAGE -->
-                    <img src="http://placehold.it/1920x584" alt="" data-bgposition="center center"
+                    <img src="{{ asset('assets/3.jpg') }}" alt="" data-bgposition="center center"
                         data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                     <!-- LAYERS -->
                     <!-- LAYER NR. 1 -->
