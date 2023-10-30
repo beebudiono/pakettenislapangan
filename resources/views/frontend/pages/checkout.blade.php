@@ -154,9 +154,8 @@
                                                 <li>
                                                     <p class="form-row form-row form-row-wide address-field validate-required"
                                                         id="billing_city_field">
-                                                        <label for="start" class="">Masukkan Tanggal / Waktu
-                                                            Mulai Anda Latihan</label>
-                                                        <input type="datetime-local" class="input-text " name="start"
+                                                        <label for="start" class="">Masukkan Tanggal Mulai Anda Latihan</label>
+                                                        <input type="date" class="input-text " name="start"
                                                             id="start" placeholder="Nama Lapangan / Alamat Lapangan"
                                                             value="" />
                                                     </p>
@@ -164,9 +163,8 @@
                                                 <li>
                                                     <p class="form-row form-row form-row-wide address-field validate-required"
                                                         id="billing_city_field">
-                                                        <label for="end" class="">Masukkan Tanggal / Waktu
-                                                            Berakhir Anda Latihan</label>
-                                                        <input type="datetime-local" class="input-text " name="end"
+                                                        <label for="end" class="">Masukkan Tanggal Berakhir Anda Latihan</label>
+                                                        <input type="date" class="input-text " name="end"
                                                             id="end" placeholder="Nama Lapangan / Alamat Lapangan"
                                                             value="" />
                                                     </p>

@@ -21,10 +21,16 @@ class TransaksiController extends Controller
         }
         
         $user = Auth::user();
-        $transaksis = Transaksi::with(['pelanggan', 'paket'])
-                    ->where('status_pemb', 'belum-bayar')
-                    ->byRole($user)
-                    ->get();
+        $query = Transaksi::with(['pelanggan', 'paket']);
+
+        if ($user->level == User::LEVEL_TRAINER){
+            $query->where("status_pemb", "pembayaran-valid")
+                ->where("main_trainer_id", $user->id);
+        }else{
+            $query->where('status_pemb', 'belum-bayar');
+        }
+        
+        $transaksis = $query->get();
 
         return DataTables::of($transaksis)
             ->addIndexColumn()
