@@ -33,6 +33,7 @@
                             <th>No Hp</th>
                             <th>Metode Bayar</th>
                             <th>Bukti Bayar</th>
+                            <th>Tipe Lapangan</th>
                             <th>Tgl Transaksi</th>
                             <th>Status</th>
                             <th class="text-center">Actions</th>
@@ -151,6 +152,10 @@
                 {
                     data: 'bukti_bayar',
                     name: 'bukti_bayar'
+                },
+                {
+                    data: 'type_lapangan',
+                    name: 'type_lapangan'
                 },
                 {
                     data: 'tgl_transaksi',
