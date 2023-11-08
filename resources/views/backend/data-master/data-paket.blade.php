@@ -80,25 +80,37 @@
                     <div class="form-group">
                         <label for="jml_pelatih">Jumlah Pelatih</label>
                         <input type="number" id="jml_pelatih" name="jml_pelatih" class="form-control"
-                            placeholder="Enter Jumlah Pelatih..">
+                            placeholder="Enter Jumlah Pelatih.." value="3" readonly>
                         <span class="help-block">Please enter jumlah pelatih</span>
                     </div>
                     <div class="form-group">
                         <label for="nama_pelatih1">Nama Pelatih 1</label>
-                        <input type="text" id="nama_pelatih1" name="nama_pelatih1" class="form-control"
-                            placeholder="Enter Pelatih 1..">
+                        <select id="nama_pelatih1" name="nama_pelatih1" class="select-chosen" data-placeholder="Choose a Country.." style="width: 100%;">
+                            <option></option><!-- Required for data-placeholder attribute to work with Chosen plugin -->
+                            @foreach ($trainers as $item)
+                                <option value="{{ $item->name }}">{{ ucwords($item->name) }}</option>
+                            @endforeach
+                        </select>
                         <span class="help-block">Please enter nama pelatih 1</span>
                     </div>
                     <div class="form-group">
                         <label for="nama_pelatih2">Nama Pelatih 2</label>
-                        <input type="text" id="nama_pelatih2" name="nama_pelatih2" class="form-control"
-                            placeholder="Enter Pelatih 2..">
+                        <select id="nama_pelatih2" name="nama_pelatih2" class="select-chosen" data-placeholder="Choose a Country.." style="width: 100%;">
+                            <option></option><!-- Required for data-placeholder attribute to work with Chosen plugin -->
+                            @foreach ($trainers as $item)
+                                <option value="{{ $item->name }}">{{ ucwords($item->name) }}</option>
+                            @endforeach
+                        </select>
                         <span class="help-block">Please enter nama pelatih 2</span>
                     </div>
                     <div class="form-group">
                         <label for="nama_pelatih3">Nama Pelatih 3</label>
-                        <input type="text" id="nama_pelatih3" name="nama_pelatih3" class="form-control"
-                            placeholder="Enter Pelatih 3..">
+                        <select id="nama_pelatih3" name="nama_pelatih3" class="select-chosen" data-placeholder="Choose a Country.." style="width: 100%;">
+                            <option></option><!-- Required for data-placeholder attribute to work with Chosen plugin -->
+                            @foreach ($trainers as $item)
+                                <option value="{{ $item->name }}">{{ ucwords($item->name) }}</option>
+                            @endforeach
+                        </select>
                         <span class="help-block">Please enter nama pelatih 3</span>
                     </div>
                     <div class="form-group">

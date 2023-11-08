@@ -25,7 +25,8 @@ return new class extends Migration
             $table->string('type_lapangan');
             $table->dateTime('start')->nullable();
             $table->dateTime('end')->nullable();
-            $table->date('tgl_transaksi')->default(DB::raw('CURRENT_TIMESTAMP'));
+            // $table->date('tgl_transaksi')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->date('tgl_transaksi')->useCurrent();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('paket_id')->references('id')->on('paket_latihans')->onDelete('cascade');
             $table->foreign('main_trainer_id')->references('id')->on('users')->onDelete('cascade');

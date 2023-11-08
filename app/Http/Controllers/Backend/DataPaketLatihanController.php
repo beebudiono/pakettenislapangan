@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\BiodataPelatih;
 use App\Models\PaketLatihan;
 use App\Models\Transaksi;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Yajra\DataTables\Facades\DataTables;
@@ -17,10 +18,15 @@ class DataPaketLatihanController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->ajax()) {
+        if (!$request->ajax()) {
+            $trainers = User::where('level', User::LEVEL_TRAINER)->orderBy("name")->get();
 
-            $pakets = PaketLatihan::latest()->get();
-            return DataTables::of($pakets)
+            return view('backend.data-master.data-paket', ["trainers" => $trainers]);
+        }
+
+        $pakets = PaketLatihan::latest()->get();
+        
+        return DataTables::of($pakets)
                 ->addIndexColumn()
                 ->addColumn('nama_paket', function ($paket) {
                     return (ucfirst($paket->nama_paket));
@@ -61,9 +67,7 @@ class DataPaketLatihanController extends Controller
                 })
                 ->rawColumns(['status', 'action'])
                 ->make(true);
-        }
 
-        return view('backend.data-master.data-paket');
     }
 
     /**
