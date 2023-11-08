@@ -66,6 +66,18 @@ class UserRolePermissionSeeder extends Seeder
                 'level' => User::LEVEL_TRAINER,
             ], $default_user_value));
 
+            $trainer1 = User::create(array_merge([
+                'email' => 'tenhag@gmail.com',
+                'name' => 'Ten Hag',
+                'level' => User::LEVEL_TRAINER,
+            ], $default_user_value));
+
+            $trainer2 = User::create(array_merge([
+                'email' => 'pepguardiola@gmail.com',
+                'name' => 'Pep Guardiola',
+                'level' => User::LEVEL_TRAINER,
+            ], $default_user_value));
+
             $user = User::create(array_merge([
                 'email' => 'user@gmail.com',
                 'name' => 'User',
@@ -73,7 +85,8 @@ class UserRolePermissionSeeder extends Seeder
             ], $default_user_value));
 
             $admin->assignRole('admin');
-            $trainer->assignRole('trainer');
+            $trainer1->assignRole('trainer');
+            $trainer2->assignRole('trainer');
             $user->assignRole('user');
 
             DataPelatih::create([

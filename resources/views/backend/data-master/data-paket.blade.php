@@ -88,7 +88,7 @@
                         <select id="nama_pelatih1" name="nama_pelatih1" class="select-chosen" data-placeholder="Choose a Country.." style="width: 100%;">
                             <option></option><!-- Required for data-placeholder attribute to work with Chosen plugin -->
                             @foreach ($trainers as $item)
-                                <option value="{{ $item->name }}">{{ ucwords($item->name) }}</option>
+                                <option value="{{ $item->id }}">{{ ucwords($item->name) }}</option>
                             @endforeach
                         </select>
                         <span class="help-block">Please enter nama pelatih 1</span>

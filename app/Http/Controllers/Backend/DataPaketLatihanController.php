@@ -85,22 +85,22 @@ class DataPaketLatihanController extends Controller
     {
         //define validation rules
         $validator = Validator::make($request->all(), [
-            'nama_paket' => 'required',
-            'jml_pelatih' => 'required',
-            'jml_asisten' => 'required',
-            'jml_ballboy' => 'required',
-            'tgl_start' => 'required',
-            'tgl_end' => 'required',
-            'time_start' => 'required',
-            'time_end' => 'required',
-            'kuota' => 'required',
-            'harga' => 'required',
-            'durasi' => 'required',
+            'nama_paket'    => 'required',
+            'jml_pelatih'   => 'required',
+            'jml_asisten'   => 'required',
+            'jml_ballboy'   => 'required',
+            'tgl_start'     => 'required',
+            'tgl_end'       => 'required',
+            'time_start'    => 'required',
+            'time_end'      => 'required',
+            'kuota'         => 'required',
+            'harga'         => 'required',
+            'durasi'        => 'required',
             'nama_pelatih1' => 'required',
             'nama_asisten1' => 'required',
             'nama_ballboy1' => 'required',
-            'materi' => 'required',
-            'peralatan' => 'required',
+            'materi'        => 'required',
+            'peralatan'     => 'required',
         ]);
 
         //check if validation fails
@@ -108,39 +108,45 @@ class DataPaketLatihanController extends Controller
             return response()->json(['errors' => $validator->errors()->all()]);
         }
 
+        $findMainTrainer = User::where("id", $request->nama_pelatih1)->first();
+        if(!$findMainTrainer){
+            return response()->json(['errors' => "cant find main trainer / pelatih 1"]);
+        }
+
         $paket = PaketLatihan::updateOrCreate([
             'id' => $request->id
         ], [
-            'nama_paket' => $request->nama_paket,
-            'jml_pelatih' => $request->jml_pelatih,
-            'jml_asisten' => $request->jml_asisten,
-            'jml_ballboy' => $request->jml_ballboy,
-            'tgl_start' => $request->tgl_start,
-            'tgl_end' => $request->tgl_end,
-            'time_start' => $request->time_start,
-            'time_end' => $request->time_end,
-            'durasi' => $request->durasi,
-            'harga' => $request->harga,
-            'kuota' => $request->kuota,
+            'nama_paket'      => $request->nama_paket,
+            'jml_pelatih'     => $request->jml_pelatih,
+            'jml_asisten'     => $request->jml_asisten,
+            'jml_ballboy'     => $request->jml_ballboy,
+            'tgl_start'       => $request->tgl_start,
+            'tgl_end'         => $request->tgl_end,
+            'time_start'      => $request->time_start,
+            'time_end'        => $request->time_end,
+            'durasi'          => $request->durasi,
+            'harga'           => $request->harga,
+            'kuota'           => $request->kuota,
         ]);
 
         $detail = BiodataPelatih::updateOrCreate(
             [
-                'id' => $request->id
+                'id' => $paket->id
             ],
             [
-                'nama_pelatih1' => $request->nama_pelatih1,
-                'nama_pelatih2' => $request->nama_pelatih2,
-                'nama_pelatih3' => $request->nama_pelatih3,
-                'nama_asisten1' => $request->nama_asisten1,
-                'nama_asisten2' => $request->nama_asisten2,
-                'nama_asisten3' => $request->nama_asisten3,
-                'nama_ballboy1' => $request->nama_ballboy1,
-                'nama_ballboy2' => $request->nama_ballboy2,
-                'nama_ballboy3' => $request->nama_ballboy3,
-                'materi' => $request->materi,
-                'peralatan' => $request->peralatan,
-                'paket_id' => $paket->id
+                'main_trainer_id' => $findMainTrainer->id,
+                'nama_pelatih1'   => $findMainTrainer->name,
+                'nama_pelatih2'   => $request->nama_pelatih2,
+                'nama_pelatih3'   => $request->nama_pelatih3,
+                'nama_asisten1'   => $request->nama_asisten1,
+                'nama_asisten2'   => $request->nama_asisten2,
+                'nama_asisten3'   => $request->nama_asisten3,
+                'nama_ballboy1'   => $request->nama_ballboy1,
+                'nama_ballboy2'   => $request->nama_ballboy2,
+                'nama_ballboy3'   => $request->nama_ballboy3,
+                'materi'          => $request->materi,
+                'peralatan'       => $request->peralatan,
+                'paket_id'        => $paket->id
             ]
         );
 
